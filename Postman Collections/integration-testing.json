@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"type": "text/javascript",
+						"id": "81e9333e-5cc4-4989-8bee-9b9fadd7f40b",
 						"exec": [
 							"pm.test(\"An access token is returned\", () => {",
 							"    pm.expect(pm.response.json()).to.have.property('token')",
@@ -21,12 +21,19 @@
 							"    // This lets us use it in other requests",
 							"    pm.collectionVariables.set('token', pm.response.json().token)",
 							"})",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
 							""
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
 			"id": "9e7e2ca8-3a81-4988-9b25-fccf6d577747",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -142,12 +149,10 @@
 	],
 	"variable": [
 		{
-			"id": "2dce9a84-bb3b-409d-ba85-a53a3432a63e",
 			"key": "token",
 			"value": ""
 		},
 		{
-			"id": "eaff7dc7-7d68-4d25-889f-f544659f4dc8",
 			"key": "baseUrl",
 			"value": "https://postman-integration-testing.glitch.me/"
 		}
