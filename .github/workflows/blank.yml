@@ -41,7 +41,7 @@ jobs:
 
       # Run Postman collection
       - name: Run Postman collection
-        run: newman run ./postman-testing/Postman-Collections/integration-testing.json -r htmlextra
+        run: newman run ./postman-testing/Postman Collections/integration-testing.json -r htmlextra
 
       # Upload the artifacts
       - name: Output the run details
